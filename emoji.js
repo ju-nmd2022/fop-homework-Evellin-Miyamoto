@@ -2,36 +2,70 @@
 for fundamentals of programming.
 Jönköping University*/
 
+let greeting = "Hello!";
+const x = 100;
+const y = 50;
+
 push();
-translate(100, 100);
-background(255, 255, 255);
+translate(x, x);
+rotate(-0.3);
+background(x + x + y + 5, x + x + y + 5, x + x + y + 5);
 noStroke();
 
 //face
-fill(255, 255, 0);
-ellipse(200, 200, 200, 200);
+fill(x + x + y + 5, x + x + y + 5, 0);
+ellipse(x + x, x + x, x + x, x + x);
 
 //left eye
 fill(0, 0, 0);
 beginShape();
-vertex(140, 180);
-bezierVertex(140, 140, 180, 140, 180, 180);
-bezierVertex(180, 160, 140, 160, 140, 180);
+vertex(x + y - 10, x + y + 30);
+bezierVertex(
+  x + y - 10,
+  x + y - 10,
+  x + y + 30,
+  x + y - 10,
+  x + y + 30,
+  x + y + 30
+);
+bezierVertex(x + y + 30, 160, x + y - 10, 160, x + y - 10, x + y + 30);
 endShape();
 
 //right eye
 fill(0, 0, 0);
 beginShape();
-vertex(220, 180);
-bezierVertex(220, 140, 260, 140, 260, 180);
-bezierVertex(260, 160, 220, 160, 220, 180);
+vertex(x + x + y - 30, x + y + 30);
+bezierVertex(
+  x + x + y - 30,
+  x + y - 10,
+  x + x + y + 10,
+  x + y - 10,
+  x + x + y + 10,
+  x + y + 30
+);
+bezierVertex(
+  x + x + y + 10,
+  160,
+  x + x + y - 30,
+  160,
+  x + x + y - 30,
+  x + y + 30
+);
 endShape();
 
 //mouth
 fill(0, 0, 0);
-ellipse(200, 225, 40, 20);
-ellipse(200, 235, 40, 20);
-fill(255, 255, 0);
-ellipse(190, 225, 40, 20);
-ellipse(190, 235, 40, 20);
+ellipse(x + x, x + x + 25, y - 10, y - 30);
+ellipse(x + x, x + x + 35, y - 10, y - 30);
+fill(x + x + y + 5, x + x + y + 5, 0);
+ellipse(x + x - 10, x + x + 25, y - 10, y - 30);
+ellipse(x + x - 10, 235, y - 10, y - 30);
+
+//greeting
+scale(1.5);
+fill(x + x + 29, x + 7, x + 11);
+rect(5, y + 20, x - 20, y - 30, y - 30);
+triangle(y + 8, x - 15, x - 30, 100, x - 30, y + 37);
+fill(0, 0, 0);
+text(greeting, y - 20, x - 15);
 pop();
