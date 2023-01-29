@@ -21,5 +21,5 @@ function emoji(x, y, s) {
 
 function draw() {
   clear();
-  emoji(mouseX, mouseY, 0.4);
+  emoji(width / 2, height / 2, Math.max(0.1, (mouseX / width) * 2));
 }
