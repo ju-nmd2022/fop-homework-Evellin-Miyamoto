@@ -27,13 +27,14 @@ let emojiRotation = 0;
 function draw() {
   background(255, 255, 255);
   push();
-  translate(x, 150);
+  translate(x, y);
   rotate(emojiRotation);
   //   emoji(150, y, 2.0);
-  emoji(0, 0, s);
+  emoji(100, 100, s);
   pop();
-  //   y = y + 2;
-  //   x = x + 4;
-  s = s + 0.005;
-  emojiRotation = emojiRotation + 0.1;
+  y = y + 7;
+  x = x - 5;
+
+  //   s = s + 0.005;
+  //   emojiRotation = emojiRotation + 0.1;
 }
