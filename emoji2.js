@@ -23,10 +23,17 @@ emoji(100, 100, s);
 emoji(200, 200, s);
 emoji(400, 50, s);
 
+let emojiRotation = 0;
 function draw() {
   background(255, 255, 255);
-  emoji(150, y, s);
-  emoji(x, 100, s);
-  y = y + 3;
-  x = x + 2;
+  push();
+  translate(x, 150);
+  rotate(emojiRotation);
+  //   emoji(150, y, 2.0);
+  emoji(0, 0, s);
+  pop();
+  //   y = y + 2;
+  //   x = x + 4;
+  s = s + 0.005;
+  emojiRotation = emojiRotation + 0.1;
 }
