@@ -1,8 +1,3 @@
-// let x = 100;
-let y = 100;
-
-background(255, 255, 255);
-
 function emoji(x, y) {
   //head
   fill(255, 255, 0);
@@ -18,24 +13,29 @@ function emoji(x, y) {
   line(x - 30, y + 30, x + 30, y + 30);
 }
 
-let x = -150;
-let direction = "forward";
+let x = 100;
+// let direction = "forward";
+let speed = 5;
 
 function draw() {
   background(255, 255, 255);
   emoji(x, 150);
 
-  if (direction === "forward") {
-    if (x < 300) {
-      x = x + 5;
-    } else {
-      direction = "backwards";
-    }
-  } else if (direction === "backwards") {
-    if (x > 0) {
-      x = x - 5;
-    } else {
-      direction = "forward";
-    }
+  x = x - speed;
+  if (x > 300 || x < 100) {
+    speed = speed * -1;
   }
+
+  //if (direction === "forward") {
+  //     if (x < 300) {
+  //       x = x + 5;
+  //     } else {
+  //       direction = "backwards";
+  //     }
+  //   } else if (direction === "backwards") {
+  //     if (x > 0) {
+  //       x = x - 5;
+  //     } else {
+  //       direction = "forward";
+  //     }
 }
