@@ -1,12 +1,18 @@
-let lastX = 0;
-let lastY = 0;
+let lastMouseX = 0;
+let lastMouseY = 0;
 
 background(255, 255, 255);
 function draw() {
   strokeWeight(8);
-  stroke((mouseX / width) * 255, 0, (mouseY / height) * 255);
-  line(lastX, lastY, mouseX, mouseY);
+  if (mouseIsPressed) {
+    if (mouseIsActive) {
+      line(mouseX, mouseY, lastMouseX, lastMouseY);
+    }
 
-  lastX = mouseX;
-  lastY = mouseY;
+    lastMouseX = mouseX;
+    lastMouseY = mouseY;
+    mouseIsActive = true;
+  } else {
+    mouseIsActive = false;
+  }
 }
